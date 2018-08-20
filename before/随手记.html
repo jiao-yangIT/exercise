@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>随手记</title>
+    </head>
+    <body>
+        <h1>随手记-本地保存</h1>
+        <div>
+            <textarea id="content" cols="100" rows="20"></textarea>
+        </div>
+    </body>
+    <script type="text/javascript">
+        var el = document.querySelector("#content");
+        el.value=localStorage.getItem('data')||'';
+        el.addEventListener('blur',function(){
+            var data=el.value;
+            localStorage.setItem('data',data);
+        });
+    </script>
+</html>
